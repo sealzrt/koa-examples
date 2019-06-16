@@ -1,4 +1,3 @@
-
 const Koa = require('koa');
 const koaBody = require('koa-body');
 
@@ -15,7 +14,7 @@ app.use(koaBody({
 app.use(async function(ctx) {
   const body = ctx.request.body;
   if (!body.name) ctx.throw(400, '.name required');
-  ctx.body = { name: body.name.toUpperCase() };
+  ctx.body = {name: body.name.toUpperCase()};
 });
 
 if (!module.parent) app.listen(3000);
