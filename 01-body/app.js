@@ -5,12 +5,12 @@ const app = module.exports = new Koa();
 const port = process.env.PORT || 3000;
 
 app.use(async(ctx, next) => {
-  if (ctx.url === '/user' && ctx.method === 'GET') {
+  if (ctx.url === '/' && ctx.method === 'GET') {
     ctx.set('Content-Type', 'text/html;charset=utf8');
     // ctx.type = 'text/html;charset=utf8';
     ctx.body = (
       `
-      <form method="post">
+      <form method="post" action="/user">
         <input type="text" name="username" />
         <input type="submit" />
       </form>
