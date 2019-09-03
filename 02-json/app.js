@@ -25,14 +25,17 @@ function delay(timeout) {
 
 app.use(async(ctx, next) => {
   if (ctx.url === '/user') {
-    await delay(8000);
-    ctx.status = 404;
-    ctx.body = 'not found...';
+    await delay(5000);
+    // ctx.status = 404;
+
+    // ctx.body = 'not found...';
+
     // ctx.type = 'json';
     // ctx.body = {
-    //   id: 123,
+    //   code: 'OK',
     //   name: 'admin'
     // };
+
     // return;
   }
   await next();
