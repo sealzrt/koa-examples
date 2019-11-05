@@ -76,3 +76,5 @@ test/images/originalSideways.jpg.2
 out/*
 
 yarn.lock
+
+.js.map

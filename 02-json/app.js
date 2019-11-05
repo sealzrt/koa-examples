@@ -24,19 +24,19 @@ function delay(timeout) {
 }
 
 app.use(async(ctx, next) => {
-  if (ctx.url === '/user') {
-    await delay(5000);
+  if (ctx.url.startsWith('/user')) {
+    await delay(10000);
     // ctx.status = 404;
 
     // ctx.body = 'not found...';
 
-    // ctx.type = 'json';
-    // ctx.body = {
-    //   code: 'OK',
-    //   name: 'admin'
-    // };
+    ctx.type = 'json';
+    ctx.body = {
+      code: 'OK',
+      name: 'admin'
+    };
 
-    // return;
+    return;
   }
   await next();
 });
